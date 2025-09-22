@@ -1,0 +1,134 @@
+---
+import DiscordIcon from '@icons/discord.svg';
+import FacebookIcon from '@icons/facebook.svg';
+import InstagramIcon from '@icons/instagram.svg';
+import { CardCommunity } from "./communitys_card";
+import { CardComments } from './comments_card';
+import MariaProfile from '@images/profile2.png';
+import RobertoProfile from '@images/profile3.png';
+import AnaProfile from '@images/profile4.png';
+import PersonsIcon from '@icons/persons.svg';
+import HandsIcon from '@icons/hands2.svg';
+import StarIcon from '@icons/star4.svg'
+
+const missionData = [
+    {
+        icon: PersonsIcon,
+        title: "5,000+",
+        subtitle: "Duelistas activos en México",
+        variant: "persons",
+    },
+    {
+        icon: HandsIcon,
+        title: "25,000+",
+        subtitle: "Transacciones exitosas",
+        variant: "hands",
+    },
+    {
+        icon: StarIcon,
+        title: "4.9/5",
+        subtitle: "Calificación promedio",
+        variant: "star",
+    },
+]
+
+const commentsData = [
+    {
+        image: MariaProfile ,
+        name: "María González",
+        text: '"Excelente plataforma. Compré mi primer deck de Yu-Gi-Oh! y llegó en perfectas condiciones. El vendedor fue muy profesional."',
+        place: "Guadalajara, Jalisco",
+        variant: "comment1",
+    },
+    {
+        image: RobertoProfile,
+        name: "Roberto Martínez",
+        text: '"Como vendedor, TCG MX me ha permitido llegar a más clientes. La comisión es justa y el pago siempre es puntual."',
+        place: "Ciudad de México",
+        variant: "comment2",
+    },
+    {
+        image: AnaProfile,
+        name: "Ana Ruiz",
+        text: '"Encontré cartas de Pokémon que llevaba años buscando. Los precios son justos y el envío fue súper rápido."',
+        place: "Monterrey, Nuevo León",
+        variant: "comment3",
+    },
+]
+---
+
+<section class="community">
+    <div class="community__container">
+        <div class="community__information">
+            <h1 class="community__title">Comunidad de confianza</h1>
+            <h2 class="community__subtitle">Más de 5,000 duelistas en México ya confían en TCG MX</h2>
+        </div>
+        <div class="community__duelists">
+            {missionData.map((card) => <CardCommunity {...card}/>)}
+        </div>
+        <div class="community__comments">
+            {commentsData.map((card) => <CardComments {...card}/>)}
+        </div>
+        <div class="community__join">
+            <h1 class="community__join-title">¡Únete a la comunidad!</h1>
+            <h2 class="community__join-subtitle">Conecta con otros jugadores, participa en torneos y mantente al día con las últimas noticias del TCG</h2>
+            <div class="community__join-buttons">
+                <button class="community__button-social"><span><DiscordIcon/></span>Discord</button> 
+                <button class="community__button-social"><span><FacebookIcon/></span>Facebook</button>
+                <button class="community__button-social"><span><InstagramIcon/></span>Instagram</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.community{
+    @apply w-full;
+
+    &__container{
+        @apply p-16;
+    }
+
+    &__information{
+        @apply text-center mb-14;
+    }
+
+    &__title{
+        @apply text-2xl md:text-4xl font-bold mb-4 text-title;
+    }
+
+    &__subtitle{
+        @apply text-xl text-subtitle font-medium;
+    }
+
+    &__duelists{
+        @apply grid grid-cols-1 md:grid-cols-3 text-center mb-8;
+    }
+
+    &__comments{
+        @apply grid grid-cols-1 md:grid-cols-3 mb-16 gap-8;
+    }
+
+    &__join{
+        @apply bg-gradient-to-r from-bg-warranty to-bg2-yugioh rounded-2xl text-center py-8;
+    }
+
+    &__join-title{
+        @apply text-text text-3xl font-bold mb-4;
+    }
+
+    &__join-subtitle{
+        @apply text-text text-xl mb-8;
+    }
+
+    &__join-buttons{
+        @apply grid grid-cols-1 md:grid-cols-3 gap-4 px-5 md:px-90;
+    }
+
+    &__button-social{
+        @apply bg-text rounded-4xl py-3 text-base text-bg-warranty font-bold cursor-pointer flex justify-center items-center gap-2;
+    }
+}
+</style>

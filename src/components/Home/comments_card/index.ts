@@ -1,0 +1,1 @@
+export { default as CardComments} from './comments_card.astro'

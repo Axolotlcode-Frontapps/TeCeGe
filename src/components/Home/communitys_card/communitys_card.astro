@@ -1,0 +1,60 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+
+interface Props {
+    icon: ImageMetadata,
+    title: string,
+    subtitle: string;
+    variant?: 'persons' | 'hands' | 'star';
+}
+
+const { icon, title, subtitle, variant} = Astro.props
+
+const variantClasses: Record<string, string> = {
+  persons: 'from-primary to-secondary',
+  hands: 'from-bg1-mtg to-bg2-mtg',
+  star: 'from-bg1-yugioh to-bg2-yugioh',
+};
+
+const gradientClass = variant ? variantClasses[variant] : undefined;
+---
+
+<article class="community">
+    <div class="community__duelists">
+        <div class="community__icon" class:list={[gradientClass && `bg-gradient-to-r ${gradientClass}`]}>
+            <Image src={icon} alt="icon"/>
+        </div>
+        <div class="community__information">
+            <h1 class="community__title">{title}</h1>
+            <h2 class="community__subtitle">{subtitle}</h2>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.community{
+
+    &__duelists{
+        @apply mb-6 flex flex-col justify-center items-center h-full;
+    }
+
+    &__icon{
+        @apply bg-gradient-to-r rounded-full px-6 py-7 w-fit mb-6;
+    }
+
+    &__information{
+        @apply flex flex-col justify-center items-center;
+    }
+
+    &__title{
+        @apply text-2xl font-bold text-title mb-2;
+    }
+
+    &__subtitle{
+        @apply text-base font-medium text-subtitle;
+    }
+}
+</style>

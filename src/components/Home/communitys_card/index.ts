@@ -1,0 +1,1 @@
+export { default as CardCommunity} from './communitys_card.astro'

@@ -1,0 +1,82 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+import StarIcon from '@icons/star2.svg';
+
+interface Props {
+    image: ImageMetadata;
+    name: string,
+    text: string,
+    place: string,
+    variant?: 'comment1' | 'comment2' | 'comment3';
+}
+
+const {image, name, text, place, variant} = Astro.props
+
+const variantClasses: Record<string, string> = {
+  comment1: 'from-gray-100 to-gray-100', 
+  comment2: 'from-blue-50 to-blue-50',
+  comment3: 'from-amber-50 to-amber-50',
+};
+
+const gradientClass = variant ? variantClasses[variant] : undefined;
+---
+
+<article class="comments">
+    <div class="comments__container" class:list={[gradientClass && `bg-gradient-to-r ${gradientClass}`]}>
+        <div class="comments__person">
+            <div class="comments__image-person">
+                <Image src={image} alt={name}/>
+            </div>
+            <div class="comments__scoring">
+                <h1 class="comments__name">{name}</h1>
+                <div class="comments__icon">
+                    <StarIcon/>
+                    <StarIcon/>
+                    <StarIcon/>
+                    <StarIcon/>
+                    <StarIcon/>
+                </div>
+            </div>
+        </div>
+        <div class="comments__text">
+            <p class="comments__comment">{text}</p>
+            <p class="comments__place">{place}</p>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.comments{
+
+    &__container{
+        @apply rounded-2xl p-8 h-full ;
+    }
+
+    &__person{
+        @apply grid grid-cols-[2fr_8fr] mb-5 ;
+    }
+
+    &__icon{
+        @apply grid grid-cols-12;
+    }
+
+    &__name{
+        @apply text-base font-bold mb-1;
+    }
+
+    &__text{
+        @apply text-base text-subtitle;
+    } 
+
+    &__comment{
+        @apply italic mb-4;
+    } 
+
+    &__place{
+        @apply text-sm text-subtitle;
+    } 
+}
+</style>
