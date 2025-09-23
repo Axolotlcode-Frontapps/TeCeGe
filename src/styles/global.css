@@ -31,13 +31,10 @@
   --color-star: #F3E8FF;
   --color-type: #FFEDD5;
   --color-text-type: #9A3412;
-  --comment1: #EFF6FF;
-  --comment2: #F0FDF4;
-  --comment3: #FEFCE8;
-  --events1: #312E81;
-  --events2: #581C87;
-  --events3: #9D174D;
-  --events-bg1: #EAB308;
-  --events-buttonmtg: #3B82F6;
-
+  --color-events1: #312E81;
+  --color-events2: #581C87;
+  --color-events3: #9D174D;
+  --color-events-bg1: #EAB308;
+  --color-events-bg2: #3B82F6;
+  --color-text-events: #FDE047;
 }

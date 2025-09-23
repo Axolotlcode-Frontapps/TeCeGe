@@ -1,0 +1,1 @@
+export { default as CardTournaments} from './tournaments_card.astro'

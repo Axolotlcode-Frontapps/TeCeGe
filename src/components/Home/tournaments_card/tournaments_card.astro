@@ -1,0 +1,83 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+
+interface Props {
+    icon: ImageMetadata,
+    title: string,
+    subtitle: string;
+    tag: string;
+    award: string;
+    variant?: 'icon1' | 'icon2' | 'icon3';
+    bg?: 'bg1' | 'bg2' | 'bg3';
+}
+
+const { icon, title, subtitle, tag, award, variant, bg} = Astro.props
+
+const variantClasses: Record<string, string> = {
+  icon1: 'from-events-bg1 to-events-bg1',
+  icon2: 'from-bg1-yugioh to-bg1-yugioh',
+  icon3: 'from-bg1-mtg to-bg1-mtg',
+};
+
+const gradientClass = variant ? variantClasses[variant] : undefined;
+
+const bgClasses: Record<string, string> = {
+  bg1: 'from-bg1-mtg to-bg1-mtg',
+  bg2: 'from-bg2-pokemon to-bg2-pokemon',
+  bg3: 'from-events-bg2 to-events-bg2',
+};
+
+const bgClass = bg ? bgClasses[bg] : undefined;
+---
+
+<article class="tournaments">
+    <div class="tournaments__container">
+        <div class="tournaments__icon" class:list={[gradientClass && `bg-gradient-to-r ${gradientClass}`]}>
+            <Image src={icon} alt="icon"/>
+        </div>
+        <div class="tournaments__information">
+            <h1 class="tournaments__title">{title}</h1>
+            <h2 class="tournaments__subtitle">{subtitle}</h2>
+            <div class="tournaments__additional">
+                <p class="tournaments__tag" class:list={[bgClass && `bg-gradient-to-r ${bgClass}`]}>{tag}</p>
+                <p class="tournaments__award">{award}</p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.tournaments{
+
+    &__container{
+        @apply grid grid-cols-1 md:grid-cols-[3fr_16fr] mb-8 bg-white/10 rounded-2xl border-1 border-gray-500 p-6;
+    }
+
+    &__icon{
+        @apply bg-amber-100 rounded-full px-4 py-5 w-fit h-fit;
+    }
+
+    &__title{
+        @apply text-xl font-bold text-white mb-2;
+    }
+
+    &__subtitle{
+        @apply text-base text-white mb-2;
+    }
+
+    &__additional{
+        @apply md:flex space-x-4;
+    }
+
+    &__tag{
+        @apply text-sm font-medium text-white bg-bg1-mtg w-fit rounded-full px-4 py-1;
+    }
+
+     &__award{
+        @apply text-base font-bold text-text-events;
+    }
+}
+</style>
