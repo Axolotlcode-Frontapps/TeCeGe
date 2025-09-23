@@ -1,0 +1,77 @@
+---
+import CheckIcon from '@icons/check2.svg'
+---
+
+<section class="stay">
+    <div class="stay__container">
+        <div class="stay__information">
+            <h1 class="stay__title">¡Mantente al día!</h1>
+            <h2 class="stay__subtitle">Recibe las mejores ofertas, nuevos lanzamientos y noticias del mundo TCG</h2>
+        </div>
+        <div class="stay__subscribe">
+            <div class="stay__subscribe-info">
+                <h1 class="stay__subscribe-title">Suscríbete al newsletter</h1>
+                <div class="stay__list"><CheckIcon/>Ofertas exclusivas para suscriptores</div><br>
+                <div class="stay__list"><CheckIcon/>Alertas de nuevos productos</div><br>
+                <div class="stay__list"><CheckIcon/>Noticias de torneos</div>
+            </div> 
+            <div class="stay__form-container">
+                <form class="stay__form">
+                    <input type="email" placeholder="Tu correo electrónico" class="stay__input"><br>
+                    <button type="submit" class="stay__button-subscribe">Suscribirme gratis</button>
+                </form>
+                <p class="stay__text">No spam. Puedes cancelar en cualquier momento.</p>
+            </div>  
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.stay{
+    @apply w-full;
+
+    &__container{
+        @apply bg-gradient-to-r from-primary to-bg1-pokemon p-16;
+    }
+
+    &__information{
+        @apply text-center text-white mb-6;
+    }
+
+    &__title{
+        @apply text-2xl md:text-4xl font-bold mb-4;
+    }
+
+    &__subtitle{
+        @apply text-xl font-medium;
+    }
+
+    &__subscribe{
+        @apply grid grid-cols-1 md:grid-cols-2 md:mx-40 p-8 bg-white rounded-3xl;
+    }
+
+    &__subscribe-title{
+        @apply text-2xl font-bold text-title mb-4;
+    }
+
+    &__list{
+        @apply inline-flex gap-3 mb-3 text-subtitle font-medium;
+    }
+
+    &__input{
+        @apply border-1 border-gray-300 w-full rounded-lg p-5 mb-4 text-lg;
+    }
+
+    &__button-subscribe{
+        @apply bg-gradient-to-r from-primary to-secondary w-full p-5 rounded-lg text-white font-bold text-lg mb-3 transform transition
+        hover:bg-gradient-to-r hover:from-bg2-pokemon hover:to-bg1-db; 
+    }
+
+    &__text{
+        @apply text-sm text-center text-subtitle;
+    }
+}
+
+</style>
