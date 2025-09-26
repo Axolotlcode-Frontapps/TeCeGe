@@ -36,8 +36,8 @@ const missionData = [
 ]
 ---
 
-<section class="tournaments">
-    <div class="tournaments__container">
+<section class="tournaments section">
+    <div class="tournaments__container section__container">
         <div class="tournaments__information">
             <h1 class="tournaments__title">Torneos y eventos</h1>
             <h2 class="tournaments__subtitle">Participa en torneos oficiales y eventos especiales en todo México</h2>
@@ -64,10 +64,10 @@ const missionData = [
 @reference '@styles/global';
 
 .tournaments{
-    @apply w-full;
+    @apply w-full bg-gradient-to-br from-events1 via-events2 to-events3;
 
     &__container{
-        @apply p-16 bg-gradient-to-br from-events1 via-events2 to-events3;
+        @apply p-16;
     }
 
     &__information{
@@ -83,11 +83,11 @@ const missionData = [
     }
 
     &__events{
-        @apply grid grid-cols-1 md:grid-cols-2 gap-14 mb-10;
+        @apply grid grid-cols-1 lg:grid-cols-2 lg:gap-14 lg:mb-10;
     }
 
     &__image-container{
-        @apply bg-[url('../../assets/images/img9.png')] bg-cover h-100 text-white relative rounded-2xl opacity-90 my-12;
+        @apply bg-[url('../../assets/images/img9.png')] bg-cover h-100 text-white relative rounded-2xl opacity-90  md:my-4 lg:my-12;
     }
 
     &__image-information{
@@ -111,7 +111,7 @@ const missionData = [
     }
 
     &__button-events{
-        @apply inline-flex gap-3 cursor-pointer bg-white rounded-full py-5 px-8 text-events2 font-bold transform transition hover:bg-blue-50;
+        @apply inline-flex gap-3 md:mt-6 cursor-pointer bg-white rounded-full py-5 px-8 text-events2 font-bold transform transition hover:bg-blue-50;
     }
 }
 

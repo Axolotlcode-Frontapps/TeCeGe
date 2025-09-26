@@ -44,9 +44,10 @@ const optionsData = [
 ];
 ---
 
-<section class="hero">
-  <div class="hero__container">
+<section class="hero section">
+  <div class="hero__container section__container">
     <div class="hero__information">
+
       <div class="hero__titles">
         <h1 class="hero__title">
           ¡Tu tienda <span class="hero__span">TCG</span> en México!
@@ -79,14 +80,14 @@ const optionsData = [
   @reference '@styles/global';
 
   .hero {
-    @apply w-full font-sans;
+    @apply w-full bg-[url('../src/assets/images/home/bg.png')] bg-cover  bg-indigo-700;
 
     &__container {
-      @apply grid grid-cols-1 md:grid-cols-2 gap-5 px-10 md:px-20 bg-[url('../src/assets/images/home/bg.png')] bg-cover bg-indigo-700;
+      @apply grid grid-cols-1 lg:grid-cols-2 gap-5 p-8 md:p-16;
     }
 
     &__information {
-      @apply w-full h-fit text-text py-10 md:py-20;
+      @apply w-full h-fit text-text lg:py-10 text-center;
     }
 
     &__title {
@@ -110,15 +111,15 @@ const optionsData = [
     }
 
     &__button-catalog {
-      @apply rounded-4xl py-4 px-10 ml-4 bg-transparent border-2 border-white text-white font-bold hover:bg-text hover:text-black transition duration-300 transform hover:scale-105 cursor-pointer;
+      @apply rounded-4xl py-4 px-10 bg-transparent border-2 border-white text-white font-bold hover:bg-text hover:text-black transition duration-300 transform hover:scale-105 cursor-pointer;
     }
 
     &__targets {
-      @apply flex md:gap-5;
+      @apply flex md:gap-5 md:justify-center;
     }
 
     &__options {
-      @apply py-10 md:py-45 px-4;
+      @apply py-10 lg:py-45 px-4;
     }
 
     &__options-container{

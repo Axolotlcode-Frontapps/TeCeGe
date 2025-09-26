@@ -39,8 +39,8 @@ const missionData = [
 ---
 
 
-<section class="why">
-    <div class="why__container">
+<section class="why section">
+    <div class="why__container section__container">
         <div class="why__information">
             <h1 class="why__title">¿Por qué elegir TCG MX?</h1>
             <h2 class="why__subtitle">Somos la plataforma de confianza para coleccionistas y jugadores en todo México</h2>
@@ -94,7 +94,7 @@ const missionData = [
         }
 
         &__information{
-            @apply md:text-center md:px-70 md:mb-18;
+            @apply text-center lg:px-70 mb-12;
         }
 
         &__title{
@@ -106,15 +106,15 @@ const missionData = [
         }
 
         &__text-container{
-            @apply grid grid-cols-1 md:grid-cols-2;
+            @apply items-center grid grid-cols-1 md:grid-cols-2 md:gap-8;
         }
 
         &__options{
-            @apply md:pr-10 py-10;
+            @apply lg:pr-10 lg:py-10;
         }
 
         &__warranty{
-            @apply bg-gradient-to-br from-primary to-bg-warranty rounded-xl p-10 transform hover:scale-105 duration-300;
+            @apply bg-gradient-to-br from-primary h-fit to-bg-warranty rounded-xl p-10 transform hover:scale-105 duration-300;
         }
 
          &__warranty-information{
@@ -146,7 +146,7 @@ const missionData = [
         }
 
         &__scoring-icon{
-            @apply grid grid-cols-5 md:px-53 mb-2;
+            @apply text-center grid grid-cols-5 md:px-10 lg:px-53 mb-2;
         }
 
         &__scoring-subtitle{

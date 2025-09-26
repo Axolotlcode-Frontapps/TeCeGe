@@ -2,8 +2,8 @@
 import CheckIcon from '@icons/check2.svg'
 ---
 
-<section class="stay">
-    <div class="stay__container">
+<section class="stay section section">
+    <div class="stay__container section__container">
         <div class="stay__information">
             <h1 class="stay__title">¡Mantente al día!</h1>
             <h2 class="stay__subtitle">Recibe las mejores ofertas, nuevos lanzamientos y noticias del mundo TCG</h2>
@@ -30,10 +30,10 @@ import CheckIcon from '@icons/check2.svg'
 @reference '@styles/global';
 
 .stay{
-    @apply w-full;
+    @apply w-full bg-gradient-to-r from-primary to-bg1-pokemon ;
 
     &__container{
-        @apply bg-gradient-to-r from-primary to-bg1-pokemon p-16;
+        @apply p-16;
     }
 
     &__information{
@@ -49,7 +49,7 @@ import CheckIcon from '@icons/check2.svg'
     }
 
     &__subscribe{
-        @apply grid grid-cols-1 md:grid-cols-2 md:mx-40 p-8 bg-white rounded-3xl;
+        @apply grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:mx-40  p-8 bg-white rounded-3xl;
     }
 
     &__subscribe-title{

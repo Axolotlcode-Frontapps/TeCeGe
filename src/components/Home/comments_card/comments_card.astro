@@ -56,11 +56,15 @@ const gradientClass = variant ? variantClasses[variant] : undefined;
     }
 
     &__person{
-        @apply grid grid-cols-[2fr_8fr] mb-5 ;
+        @apply grid grid-cols-[2fr_8fr] md:grid-cols-1 mb-5 ;
     }
 
     &__icon{
-        @apply grid grid-cols-12;
+        @apply grid grid-cols-12 md:grid-cols-6 md:items-center;
+    }
+
+    &__image-person{
+        @apply md:mb-2;
     }
 
     &__name{

@@ -45,8 +45,8 @@ const gamesData = [
 ]
 ---
 
-<section class="games">
-    <div class="games__container">
+<section class="games section">
+    <div class="games__container section__container">
         <div class="games__information">
             <h1 class="games__title">Juegos más populares</h1>
             <h2 class="games__subtitle">Explora las mejores cartas de tus juegos favoritos</h2>
@@ -65,10 +65,10 @@ const gamesData = [
   @reference '@styles/global';
 
   .games{
-    @apply w-full font-sans;
+    @apply w-full font-sans bg-bg;
 
     &__container{
-        @apply bg-bg p-16;
+        @apply p-16;
     }
 
     &__information{
@@ -84,7 +84,7 @@ const gamesData = [
     }
 
     &__cards{
-        @apply grid grid-cols-1 md:grid-cols-4 gap-8;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
     }  
   }
 </style>

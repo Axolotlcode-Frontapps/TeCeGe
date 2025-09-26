@@ -57,8 +57,8 @@ const commentsData = [
 ]
 ---
 
-<section class="community">
-    <div class="community__container">
+<section class="community section">
+    <div class="community__container section__container">
         <div class="community__information">
             <h1 class="community__title">Comunidad de confianza</h1>
             <h2 class="community__subtitle">Más de 5,000 duelistas en México ya confían en TCG MX</h2>
@@ -92,7 +92,7 @@ const commentsData = [
     }
 
     &__information{
-        @apply text-center mb-14;
+        @apply text-center md:mb-10 mb-14;
     }
 
     &__title{
@@ -104,15 +104,15 @@ const commentsData = [
     }
 
     &__duelists{
-        @apply grid grid-cols-1 md:grid-cols-3 text-center mb-8;
+        @apply grid grid-cols-1 md:grid-cols-3 text-center md:mb-5 mb-8;
     }
 
     &__comments{
-        @apply grid grid-cols-1 md:grid-cols-3 mb-16 gap-8;
+        @apply grid grid-cols-1 md:grid-cols-3 md:mb-10 mb-16 gap-8;
     }
 
     &__join{
-        @apply bg-gradient-to-r from-bg-warranty to-bg2-yugioh rounded-2xl text-center py-8;
+        @apply bg-gradient-to-r from-bg-warranty to-bg2-yugioh rounded-2xl text-center py-8 md:px-10;
     }
 
     &__join-title{
@@ -124,7 +124,7 @@ const commentsData = [
     }
 
     &__join-buttons{
-        @apply grid grid-cols-1 md:grid-cols-3 gap-4 px-5 md:px-90;
+        @apply grid grid-cols-1 md:grid-cols-3 gap-4 px-5 lg:px-90;
     }
 
     &__button-social{

@@ -44,8 +44,8 @@ const missionData = [
 ]
 ---
 
-<section class="cards">
-    <div class="cards__container">
+<section class="cards section">
+    <div class="cards__container section__container">
         <div class="cards__information">
             <div class="cards__information-text">
                 <h1 class="cards__title">Cartas destacadas</h1>
@@ -71,10 +71,10 @@ const missionData = [
 @reference '@styles/global';
 
 .cards{
-    @apply w-full;
+    @apply w-full bg-bg;
 
     &__container{
-        @apply bg-bg p-16;
+        @apply p-16;
     }
 
     &__information{
@@ -98,7 +98,7 @@ const missionData = [
     }
 
     &__targets{
-        @apply grid grid-cols-1 md:grid-cols-4 mb-14 gap-8;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mb-12 mb-14 gap-8;
     }
 
     &__button{

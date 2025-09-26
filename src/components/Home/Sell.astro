@@ -6,8 +6,8 @@ import CarlosProfile from '@images/profile1.png'
 
 ---
 
-<section class="sell">
-    <div class="sell__container">
+<section class="sell section">
+    <div class="sell__container section__container">
         <div class="sell__cards">
             <div class="sell__information">
                 <h1 class="sell__title">¿Tienes cartas que vender?</h1>
@@ -62,10 +62,10 @@ import CarlosProfile from '@images/profile1.png'
 @reference '@styles/global';
 
 .sell{
-    @apply w-full;
+    @apply w-full bg-gradient-to-r from-primary to-secondary;
 
     &__container{
-        @apply bg-gradient-to-r from-primary to-secondary grid grid-cols-1 md:grid-cols-2 p-16;
+        @apply grid grid-cols-1 md:grid-cols-2 md:gap-10 p-16 md:items-center;
     }
 
     &__cards{
@@ -97,15 +97,15 @@ import CarlosProfile from '@images/profile1.png'
     }
 
     &__button-sell{
-        @apply bg-text text-primary px-6 py-4 rounded-4xl transform hover:border-2 hover:border-text hover:bg-primary hover:text-text transition duration-200 cursor-pointer;
+        @apply bg-text text-primary px-6 py-4 rounded-4xl transform hover:border-2 hover:border-text hover:bg-primary hover:text-text transition duration-200 cursor-pointer md:w-full md:mb-5;
     }
 
     &__button-know{
-        @apply rounded-4xl px-8 py-4 bg-transparent border-2 border-text text-text hover:bg-text hover:text-primary transition duration-200 cursor-pointer;
+        @apply rounded-4xl px-8 py-4 bg-transparent border-2 border-text text-text hover:bg-text hover:text-primary transition duration-200 cursor-pointer md:w-full;
     }
 
     &__profits{
-        @apply bg-text/10 rounded-2xl border-1 border-white/20 backdrop-blur-md p-10 items-center;
+        @apply bg-text/10 rounded-2xl border-1 border-white/20 backdrop-blur-md p-10 items-center md:h-fit;
     }
 
     &__profits-information{
