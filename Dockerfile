@@ -6,6 +6,7 @@ COPY . .
 RUN bun install
 RUN bun run build
 
-FROM httpd:2.4 AS runtime
-COPY --from=build /app/dist /usr/local/apache2/htdocs/
+FROM nginx:alpine AS runtime
+COPY --from=build /app/dist /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8000
