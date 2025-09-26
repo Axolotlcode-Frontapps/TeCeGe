@@ -1,0 +1,160 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+import CheckIcon from '@icons/check.svg'
+import CarlosProfile from '@images/profile1.png'
+
+---
+
+<section class="sell section">
+    <div class="sell__container section__container">
+        <div class="sell__cards">
+            <div class="sell__information">
+                <h1 class="sell__title">¿Tienes cartas que vender?</h1>
+                <h2 class="sell__subtitle">Únete a miles de vendedores que confían en TCG MX para vender sus cartas</h2>
+            </div>
+            <div class="sell__list"> 
+                <ul class="sell__list-op">
+                    <li class="sell__element"><span><CheckIcon/></span>Registro gratuito y fácil</li>
+                    <li class="sell__element"><span><CheckIcon/></span>Pago seguro y rápido</li>
+                    <li class="sell__element"><span><CheckIcon/></span>Comisiones justas y competitivas</li>
+                    <li class="sell__element"><span><CheckIcon/></span>Herramientas de venta profesionales</li>
+                </ul>
+            </div>
+            <div class="sell__buttons">
+                <button class="sell__button-sell">Empezar a vender</button>
+                <button class="sell__button-know">Conocer más</button>
+            </div>
+        </div>
+
+        <div class="sell__profits">
+            <div class="sell__profits-information">
+                <h1 class="sell__profits-title">Ganancias promedio mensual</h1>
+                <h2 class="sell__profits-subtitle">De nuestros vendedores activos</h2>
+            </div>
+            <div class="sell__prices">
+                <div class="sell__price">
+                    <h2 class="sell__prices-subtitle">$5,200</h2>
+                    <p class="sell__prices-text">Vendedores nuevos</p>
+                </div>
+                <div class="sell__price">
+                    <h2 class="sell__prices-subtitle">$15,800</h2>
+                    <p class="sell__prices-text">Vendedores expertos</p>
+                </div>
+            </div>
+            <div class="sell__profile">
+                <div class="sell__person"> 
+                    <div class="sell__image"><Image src={CarlosProfile} alt="Carlos Profile"/></div>
+                    <div class="sell__person-info">
+                        <h2 class="sell__person-name">Carlos M.</h2>
+                        <p class="sell__person-ocupation">Vendedor desde 2022</p>
+                    </div>
+                </div>
+                <div class="sell__person-text">
+                    <p class="sell__person-description">"En 6 meses ya había recuperado mi inversión inicial. ¡TCG MX cambió mi hobby en un negocio!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.sell{
+    @apply w-full bg-gradient-to-r from-primary to-secondary;
+
+    &__container{
+        @apply grid grid-cols-1 md:grid-cols-2 md:gap-10 p-16 md:items-center;
+    }
+
+    &__cards{
+        @apply text-text;
+    }
+
+    &__information{
+        @apply mb-8 mr-8;
+    }
+
+    &__title{
+        @apply text-4xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-xl;
+    }
+
+    &__list{
+        @apply text-lg mb-8;
+    }
+
+    &__element{
+        @apply md:flex gap-3 mb-4;
+    }
+
+    &__buttons{
+        @apply text-lg font-bold space-x-3;
+    }
+
+    &__button-sell{
+        @apply bg-text text-primary px-6 py-4 rounded-4xl transform hover:border-2 hover:border-text hover:bg-primary hover:text-text transition duration-200 cursor-pointer md:w-full md:mb-5;
+    }
+
+    &__button-know{
+        @apply rounded-4xl px-8 py-4 bg-transparent border-2 border-text text-text hover:bg-text hover:text-primary transition duration-200 cursor-pointer md:w-full;
+    }
+
+    &__profits{
+        @apply bg-text/10 rounded-2xl border-1 border-white/20 backdrop-blur-md p-10 items-center md:h-fit;
+    }
+
+    &__profits-information{
+        @apply text-text text-center mb-5;
+    }
+
+    &__profits-title{
+        @apply text-2xl font-bold mb-3;
+    }
+
+    &__profits-subtitle{
+        @apply text-base text-warranty-text;
+    }
+
+    &__prices{
+        @apply grid grid-cols-1 md:grid-cols-2 mb-6;
+    }
+
+    &__price{
+        @apply text-center;
+    }
+
+    &__prices-subtitle{
+        @apply text-3xl text-scoring font-bold;
+    }
+
+    &__prices-text{
+        @apply text-sm text-warranty-text;
+    }
+
+    &__profile{
+        @apply bg-text/10 rounded-lg p-5;
+    }
+
+    &__person{
+        @apply grid grid-cols-1 md:grid-cols-[1fr_8fr] mb-3;
+    }
+
+    &__person-name{
+        @apply text-text font-bold text-base;
+    }
+
+    &__person-ocupation{
+        @apply text-warranty-text text-sm font-medium;
+    }
+
+    &__person-description{
+        @apply text-warranty-text text-sm italic;
+    }
+}
+
+</style>

@@ -1,0 +1,1 @@
+export {default as CardCards} from './cards_card.astro'

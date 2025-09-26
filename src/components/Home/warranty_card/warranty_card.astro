@@ -39,11 +39,11 @@ const gradientClass = variant ? variantClasses[variant] : undefined;
     .why{
 
         &__option-container{
-            @apply grid grid-cols-[1fr_7fr] mb-6;
+            @apply grid md:grid-cols-[1.7fr_7fr] lg:grid-cols-[1fr_7fr] mb-6;
         }
 
         &__option-icon{
-            @apply rounded-full h-fit w-fit p-4 flex items-center justify-center;
+            @apply relative rounded-full h-fit w-fit p-4 flex items-center justify-center;
         }
 
         &__option-title{

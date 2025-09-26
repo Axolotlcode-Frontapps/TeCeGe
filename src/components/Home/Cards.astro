@@ -1,0 +1,114 @@
+---
+import LeftIcon from '@icons/left.svg';
+import RightIcon from '@icons/right.svg';
+import CardsCard from './cards_card/cards_card.astro';
+import ArrowIcon from '@icons/arrow.svg';
+
+const missionData = [
+    {
+        bg:"cards__bg-pokemon",
+        label:"¡HOT!",
+        span: "Pokémon",
+        scoring: "4.8",
+        title: "Charizard Base Set Holo",
+        subtitle: "Near Mint condition, English",
+        price: "$2,499",
+    },
+    {
+        bg:"cards__bg-yugioh",
+        label:"RARO",
+        span: "Yu-Gi-Oh!",
+        scoring: "4.9",
+        title: "Blue-Eyes Ultimate Dragon",
+        subtitle: "Secret Rare, 1st Edition",
+        price: "$1,899",
+    },
+    {
+        bg:"cards__bg-mtg",
+        label:"VINTAGE",
+        span: "MTG",
+        scoring: "5.0",
+        title: "Black Lotus Alpha",
+        subtitle: "Lightly Played, Authenticated",
+        price: "$45,999",
+    },
+    {
+        bg:"cards__bg-dragon",
+        label:"NUEVO",
+        span: "Dragon Ball",
+        scoring: "4.7",
+        title: "Son Goku Ultra Instinct",
+        subtitle: "Special Rare, Tournament Edition",
+        price: "$899",
+    },
+]
+---
+
+<section class="cards section">
+    <div class="cards__container section__container">
+        <div class="cards__information">
+            <div class="cards__information-text">
+                <h1 class="cards__title">Cartas destacadas</h1>
+                <h2 class="cards__subtitle">Las cartas más buscadas de la semana</h2>
+            </div>
+            <div class="cards__information-buttons">
+                <button class="cards__button-arrow"><LeftIcon/></button>
+                <button class="cards__button-arrow"><RightIcon/></button>        
+            </div>
+        </div>
+
+        <div class="cards__targets">
+            {missionData.map((card) => <CardsCard {...card}/>)}
+        </div>
+
+        <div class="cards__button">
+            <button class="cards__button-offers">Ver todas las ofertas<span><ArrowIcon/></span></button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.cards{
+    @apply w-full bg-bg;
+
+    &__container{
+        @apply p-16;
+    }
+
+    &__information{
+        @apply mb-12 grid grid-cols-1 md:grid-cols-2 relative;
+    }
+
+    &__information-buttons{
+        @apply flex flex-wrap md:absolute bottom-0 right-0 space-x-4;
+    }
+
+    &__button-arrow{
+        @apply bg-text py-4 px-3 rounded-4xl shadow-xl/20 cursor-pointer;
+    }
+
+    &__title{
+        @apply text-4xl font-bold text-title mb-3;
+    }
+
+    &__subtitle{
+        @apply text-xl text-subtitle font-medium;
+    }
+
+    &__targets{
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mb-12 mb-14 gap-8;
+    }
+
+    &__button{
+        @apply text-center;
+    }
+
+    &__button-offers{
+        @apply bg-gradient-to-r from-primary to-secondary py-4 px-8 rounded-4xl text-lg
+         text-text font-bold transform hover:scale-105 hover:from-bg2-pokemon 
+         hover:to-bg1-db duration-300 cursor-pointer inline-flex items-center gap-2;
+    }
+}
+</style>

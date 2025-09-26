@@ -1,0 +1,134 @@
+---
+import HeartIcon from '@icons/heart.svg'
+import StarIcon from '@icons/star2.svg'
+
+interface Props {
+    bg: String;
+    label: String;
+    span: String;
+    scoring: String;
+    title: String;
+    subtitle: String;
+    price: String;
+}
+
+const {bg, label, span, scoring, title, subtitle, price} = Astro.props
+---
+
+<article class="cards">
+    <div class="cards__container">
+        <div class={`cards__bg ${bg}`}>
+            <div class="cards__news">
+                <div class="cards__label">{label}</div>
+                <div class="cards__favorites"><HeartIcon/></div>
+            </div>
+        </div>
+
+        <div class="cards__text">
+            <div class="cards__scoring">
+                <div class="cards__type">{span}</div>
+                <div class="cards__score">
+                    <StarIcon />
+                    <p>{scoring}</p>
+                </div>
+            </div>
+
+            <div class="cards__information">
+                <h1 class="cards__title">{title}</h1>
+                <h2 class="cards__subtitle">{subtitle}</h2>
+            </div>
+
+            <div class="cards__prices">
+                <h1 class="cards__price">{price}</h1>
+                <button class="cards__button-buy">Comprar</button>
+            </div>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.cards{
+
+    &__container{
+        @apply rounded-2xl shadow-xl/20 transform transition duration-400 hover:shadow-xl/50  hover:-translate-y-2;
+    }
+
+    &__bg{
+        @apply h-50 rounded-t-2xl px-5 py-3; 
+    }
+
+    &__bg-pokemon{
+        @apply bg-[url('../../../assets/images/img5.png')] bg-cover;
+    }
+
+    &__bg-yugioh{
+        @apply bg-[url('../../../assets/images/img6.png')] bg-cover;
+    }
+
+    &__bg-mtg{
+        @apply bg-[url('../../../assets/images/img7.png')] bg-cover;
+    }
+
+    &__bg-dragon{
+        @apply bg-[url('../../../assets/images/img8.png')] bg-cover;
+    }
+
+    &__news{
+        @apply flex justify-between items-center text-text font-semibold;
+    }
+
+    &__label{
+        @apply bg-red-600 rounded-4xl px-3 py-1 text-sm;
+    }
+
+    &__favorites{
+        @apply bg-black/40 py-3 px-2 rounded-2xl;
+    }
+
+    &__text{
+        @apply p-5;
+    }
+
+    &__scoring{
+        @apply flex justify-between mb-3;
+    }
+
+    &__score{
+        @apply flex flex-wrap items-center gap-1;
+    }
+
+    &__type{
+        @apply text-xs bg-type text-text-type rounded-3xl py-1 px-3;
+    }
+
+    &__score{
+        @apply text-sm text-subtitle;
+    }
+
+    &__information{
+        @apply mb-6;
+    }
+
+    &__title{
+        @apply text-lg text-title font-bold mb-2;
+    }
+
+    &__subtitle{
+        @apply text-sm text-subtitle;
+    }
+
+    &__prices{
+        @apply flex flex-wrap justify-between mb-5;
+    }
+
+    &__price{
+        @apply text-2xl text-primary font-bold;
+    }
+
+    &__button-buy{
+        @apply bg-primary text-text font-bold px-4 py-2 rounded-lg cursor-pointer transform hover:bg-bg1-db;
+    }
+}
+</style>
