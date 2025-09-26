@@ -1,13 +1,11 @@
-FROM oven/bun:1 AS base
+FROM oven/bun:1 AS build
 WORKDIR /app
 
 COPY . .
-
-COPY package.json bun.lockb* ./
 
 RUN bun install
 RUN bun run build
 
 FROM httpd:2.4 AS runtime
-COPY --from=base /app/dist /usr/local/apache2/htdocs/
+COPY --from=build /app/dist /usr/local/apache2/htdocs/
 EXPOSE 8000
